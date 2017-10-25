@@ -5,7 +5,7 @@ module.exports = {
   secret:   process.env.SECRET,
   server:   process.env.PORT
   mongoose: {
-    uri:     process.env.MONGO_URI
+    uri:     process.env.MONGO_URI,
     keepAlive: 1,
     poolSize: 5,
     useMongoClient: true
@@ -17,7 +17,7 @@ module.exports = {
   providers: {
     facebook: {
       appId: process.env.FACEBOOKAPP,
-      appSecret: process.env.FACEBOOKSECRET
+      appSecret: process.env.FACEBOOKSECRET,
       passportOptions: {
         display: 'popup',
         scope:   ['email']
@@ -25,7 +25,7 @@ module.exports = {
     },
     github: {
       appId: process.env.GITHUBAPP,
-      appSecret: process.env.GITHUBSECRET
+      appSecret: process.env.GITHUBSECRET,
       passportOptions: {
           display: 'popup',
           scope: ['email']
@@ -40,7 +40,7 @@ module.exports = {
     },
     senders:  {
       default:  {
-        fromEmail: process.env.EMAIL
+        fromEmail: process.env.EMAIL,
         fromName:  'Floppy\'s Chatik',
         signature: "<em>Best regards,<br>FLoppy</em>"
       }
