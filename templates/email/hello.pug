@@ -1,0 +1,6 @@
+extends ./layout
+
+block content
+  p Hello #{name}!
+  span In order to confirm your registration click 
+      a(href='http://localhost:3000/verify/' + token) here

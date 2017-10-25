@@ -1,0 +1,36 @@
+extends layout
+
+block logout
+
+  .masthead.clearfix
+    .inner
+      nav.nav.nav-masthead
+        form(method="POST" action="/logout")
+          input.btn.btn-danger.btn-sm(type="submit" value="Logout")
+
+block content
+    
+  .row#message-area
+    .col-xs-9
+      .card.card-inverse
+        .card-header.card.success
+          |Messages
+        .card-block#chat-block
+          ul#chat.list-unstyled
+        .card-footer
+          form#message-form(autocomplete="off")
+            .input-group.input-group-sm
+              input#message.form-control.input-sm(type="text" placeholder="Type here...")
+              span.input-group-btn
+                input.btn.btn-success.btn-sm(type="Submit" value="Send message")
+    .col-xs-3
+      .card.card-inverse
+        .card-header.card-success#online-users-header
+          span.card-title Users:
+        .card-block#online-users-block
+          ul#users
+    script(src="/socket.io/socket.io.js")
+    script(src="jquery/dist/jquery.min.js")
+    script(src="main.js")
+    script(src="bootstrap/dist/js/bootstrap.min.js") 
+

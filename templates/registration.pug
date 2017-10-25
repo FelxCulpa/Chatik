@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  #user-form.row
+    form(action="/signup" method="post")
+      .form-group.row
+        label.col-sm-2.col-form-label(for="displayName") Display name
+        .col-sm-10
+          input.form-control#displayName(type="text" name="displayName" placeholder="John" required)  
+      .form-group.row
+        label.col-sm-2.col-form-label(for="email") E-mail  
+        .col-sm-10
+          input.form-control#email(type="email" name="email" placeholder="my@gmail.com" required autofocus)
+      .form-group.row
+        label.col-sm-2.col-form-label(for="password") Password
+        .col-sm-10
+          input.form-control#password(type="password" name="password" required)
+      .form-group.row
+        .col-sm-10
+          button.btn.btn-primary(type="submit") Sign Up 
+          a(href='/')
+            button.btn.btn-danger(type="button") Cancel  
+  
+

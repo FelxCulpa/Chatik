@@ -1,0 +1,37 @@
+extends layout
+
+block content
+
+  #user-form.row
+    .col-md-12
+      form.form-horizontal(action="/login" method="post")
+        input(type="hidden" name="_csrf" value=csrf())
+        .form-group
+          label.control-label.col-sm-2(for="email") Email:
+          .col-sm-10
+          input.form-control#email(type="email" name="email" placeholder="my@gmail.com" required autofocus)
+        .form-group
+          label.control-label.col-sm-2(for="password") Password:
+          .col-sm-10
+          input.form-control#password(type="password" name="password" required)
+        .form-group
+          .control-label.col-sm-20
+            button.btn.btn-success.btn-lg(type="submit") Login
+        .form-group
+          .control-label.col-sm-10
+            .btn-group(role="group")
+              button.btn.btn-sm.btn-primary(href="/login/facebook") Login via Facebook
+              button.btn.btn-sm.btn-warning(href="/login/git") Login via GitHub
+
+block welcome
+
+  p.lead #{lead}
+
+block signup
+
+  .masthead.clearfix
+    .inner
+      nav.nav.nav-masthead
+        a(href='/signup')
+          button.btn.btn-info.btn-block Sign Up
+        

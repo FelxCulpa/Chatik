@@ -1,0 +1,27 @@
+doctype html
+html
+
+  head
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css")
+    link(rel="stylesheet" href="/style.css")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    block head
+      
+  body
+    
+    include messages
+    .site-wrapper
+      .site-wrapper-inner
+        .cover-container
+          block logout
+          block signup
+          .inner.cover#app
+            h1.cover-heading Chatik
+            block welcome
+            .chat-wrapper
+              block content
+          .mastfoot
+            .inner
+              p Made by Floppy &copy; 2017
+
+      
