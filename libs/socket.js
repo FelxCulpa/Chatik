@@ -22,7 +22,7 @@ function socket(server) {
 
   io.adapter(socketRedis(config.redis.url, {port: config.redis.port}));
 
-  io.adapter(socketRedis({ host: config.redis.url, port: config.redis.port}));
+  
 
 
   io.use(function(socket, next) {
