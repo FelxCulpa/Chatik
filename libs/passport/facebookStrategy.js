@@ -11,7 +11,7 @@ function UserAuthError(message) {
 module.exports = new FacebookStrategy({
     clientID:          config.providers.facebook.appId,
     clientSecret:      config.providers.facebook.appSecret,
-    callbackURL:       config.server.siteHost + "/oauth/facebook",
+    callbackURL:       config.serverHost + "/oauth/facebook",
   
     profileFields: ['id', 'about', 'email', 'gender', 'link', 'locale',
                     'timezone', 'name'],

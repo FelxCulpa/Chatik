@@ -11,7 +11,7 @@ function UserAuthError(message) {
 module.exports = new GitHubStrategy({
     clientID:          config.providers.github.appId,
     clientSecret:      config.providers.github.appSecret,
-    callbackURL:       config.server.siteHost + "/oauth/git",
+    callbackURL:       config.serverHost + "/oauth/git",
 //    profileFields: ['id', 'bio', 'email', 'login', 'location'],
     passReqToCallback: true
   }, async function(req, accessToken, refreshToken, profile, done) {

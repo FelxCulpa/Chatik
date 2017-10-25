@@ -3,7 +3,8 @@ const path = require('path');
 
 module.exports = {
   secret:   process.env.SECRET,
-  server:   process.env.PORT
+  serverPort:   process.env.PORT,
+  serverHost: process.env.HOST,
   mongoose: {
     uri:     process.env.MONGO_URI,
     keepAlive: 1,
@@ -12,7 +13,6 @@ module.exports = {
   },
   redis: {
     url: process.env.REDISCLOUD_URL
-    
   },
   providers: {
     facebook: {
