@@ -20,7 +20,7 @@ function socket(server) {
     }
 
 
-  io.adapter(socketRedis(host: config.redis.url, port: config.redis.port}));
+  io.adapter(socketRedis9({host: config.redis.url, port: config.redis.port}));
 
   
 
