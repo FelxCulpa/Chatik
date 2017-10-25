@@ -10,6 +10,8 @@ let socketRedis = require('socket.io-redis');
 
 let sessionStore = require('./sessionStore');
 
+let redisURL = url.parse(process.env.REDISCLOUD_URL);
+
 function socket(server) {
   let io = socketIO(server);
 
@@ -20,7 +22,7 @@ function socket(server) {
     }
 
 
-  io.adapter(socketRedis(process.env.REDISCLOUD_URL, {host: config.redis.url, port: config.redis.port}));
+  io.adapter(socketRedis({host: redisURL.host, port: redisURL.port}));
 
   
 
