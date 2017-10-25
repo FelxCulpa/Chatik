@@ -51,5 +51,5 @@ router.get('/verify/:token', require('./routes/verify').get);
 app.use(router.routes());
 
 const socket = require('./libs/socket');
-const server = app.listen(3000);
+const server = app.listen(config.get('port'));
 socket(server);
