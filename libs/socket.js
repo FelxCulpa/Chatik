@@ -19,7 +19,11 @@ function socket(server) {
      io.sockets.emit('get userList', userList);
     }
 
+<<<<<<< HEAD
   io.adapter(socketRedis(config.redis.url, {port: config.redis.port}));
+=======
+  io.adapter(socketRedis({ host: config.redis.url, port: config.redis.port}));
+>>>>>>> 34ddb818f9ebeeba09735a3cc72ba1d16e031a4a
 
   io.use(function(socket, next) {
     let handshakeData = socket.request;
