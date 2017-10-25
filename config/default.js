@@ -37,12 +37,12 @@ module.exports = {
    mailer: {
     transport: 'gmail',
     gmail: {
-      user: process.env.EMAIL,
-      password: process.env.EMAILPASS
+      user: process.env.EMAIL || 'nastyakogalim@gmail.com',
+      password: process.env.EMAILPASS || 'sPLitm31804'
     },
     senders:  {
       default:  {
-        fromEmail: process.env.EMAIL,
+        fromEmail: process.env.EMAIL || 'nastyakogalim@gmail.com',
         fromName:  'Floppy\'s Chatik',
         signature: "<em>Best regards,<br>FLoppy</em>"
       }
