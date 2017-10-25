@@ -7,10 +7,10 @@
     "node": "8.6.0"
   },
   "directories": {
-    "start": "node index.js",
     "test": "test"
   },
   "scripts": {
+    "start": "node index.js",
      "test": "mocha --harmony"
   },
   "dependencies": {
