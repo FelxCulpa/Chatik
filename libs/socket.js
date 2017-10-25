@@ -127,7 +127,7 @@ function socket(server) {
 
 
 let socketEmitter = require('socket.io-emitter');
-let redisClient = require('redis').createClient();
+let redisClient = require('redis').createClient(process.env.REDISCLOUD_URL);
 socket.emitter = socketEmitter(redisClient);
 
 module.exports = socket;
