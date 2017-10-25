@@ -11,7 +11,7 @@ let socketRedis = require('socket.io-redis');
 let sessionStore = require('./sessionStore');
 
 //let redisURL = url.parse(process.env.REDISCLOUD_URL);
-let redisURL = url.parse('redis://redis-12907.c14.us-east-1-2.ec2.cloud.redislabs.com:12907');
+
 
 function socket(server) {
   let io = socketIO(server);
@@ -23,8 +23,8 @@ function socket(server) {
     }
 
 
-  io.adapter(socketRedis(redisURL.hostname, redisURL.port, {auth_pass: 'B8SmDF9KDY736VSm'} ));
-  console.log(redisURL);
+  io.adapter(socketRedis(process.env.REDISCLOUD_URL));
+  //console.log(redisURL);
   
 
 
