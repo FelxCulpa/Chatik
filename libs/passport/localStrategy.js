@@ -15,10 +15,11 @@ module.exports = new LocalStrategy({
         return done(err);
       }
 
-      if (!user.confirmed) {
-        return done(null, false, { message: 'Please verify your e-mail adress' });
-      }
+      
       if (!user || !user.checkPassword(password)) {
+        if (!user.confirmed) {
+        return done(null, false, { message: 'Please verify your e-mail adress' });
+        }
         return done(null, false, { message: 'User doesn\'t exist' });
       }
       return done(null, user);

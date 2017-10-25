@@ -23,7 +23,7 @@ function socket(server) {
     }
 
 
-  io.adapter(socketRedis(process.env.REDISCLOUD_URL));
+  io.adapter(socketRedis(config.redis.url));
   //console.log(redisURL);
   
 
@@ -127,7 +127,7 @@ function socket(server) {
 
 
 let socketEmitter = require('socket.io-emitter');
-let redisClient = require('redis').createClient(process.env.REDISCLOUD_URL);
+let redisClient = require('redis').createClient(config.redis.url);
 socket.emitter = socketEmitter(redisClient);
 
 module.exports = socket;
