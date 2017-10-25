@@ -50,6 +50,7 @@
     "nodemailer-smtp-transport": "^2.7.4",
     "nodemailer-stub-transport": "^1.1.0",
     "passport-facebook": "^2.1.1",
+    "path" : "^0.12.7",
     "passport-github": "^1.1.0",
     "passport-github2": "^0.1.11",
     "passport-jwt": "^2.2.1",
@@ -69,6 +70,6 @@
     "mocha": "^3.2.0",
     "request": "^2.79.0",
     "request-promise": "^4.1.1",
-    "should": "^13.1.0",
+    "should": "^13.1.0"
   }
 }

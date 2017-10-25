@@ -14,10 +14,10 @@ module.exports = {
   redis: {
     url: process.env.REDIS_URL,
     port: process.env.REDIS_PORT
-  }
+  },
   providers: {
     facebook: {
-      appId: process.env.FACEBOOKAPP || '142925809673222',
+      appId: process.env.FACEBOOKAPP || '1584514044907807',
       appSecret: process.env.FACEBOOKSECRET || 'f0f14ef63e0c6b9ec549b9b15f63a808',
       passportOptions: {
         display: 'popup',
@@ -36,15 +36,15 @@ module.exports = {
    mailer: {
     transport: 'gmail',
     gmail: {
-      user: process.env.EMAIL
+      user: process.env.EMAIL,
       password: process.env.EMAILPASS
     },
     senders:  {
       default:  {
-        fromEmail: process.env.EMAIL
+        fromEmail: process.env.EMAIL,
         fromName:  'Floppy\'s Chatik',
         signature: "<em>Best regards,<br>FLoppy</em>"
-      },
+      }
     }
   },
   crypto: {
