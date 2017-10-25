@@ -3,9 +3,7 @@ const path = require('path');
 
 module.exports = {
   secret:   process.env.SECRET || 'mysecret',
-  server: {
-    siteHost: process.env.PORT || 'http://localhost:3000'
-  },
+  server:   process.env.PORT || 'http://localhost:3000',
   mongoose: {
     uri:     process.env.MONGO_URI || 'mongodb://FLoppy:18sPLitm304@ds233895.mlab.com:33895/chat_app',
     keepAlive: 1,
