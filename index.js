@@ -1,19 +1,9 @@
-// A "closer to real-life" app example
-// using 3rd party middleware modules
-// P.S. MWs calls be refactored in many files
-
-// long stack trace (+clarify from co) if needed
-if (process.env.TRACE) {
-  require('./libs/trace');
-}
-
 const Koa = require('koa');
 const app = new Koa();
 
 const config = require('config');
 const mongoose = require('./libs/mongoose');
 
-// keys for in-koa KeyGrip cookie signing (used in session, maybe other modules)
 app.keys = [config.secret];
 
 const path = require('path');
@@ -25,9 +15,6 @@ middlewares.forEach(function(middleware) {
   app.use(require('./middlewares/' + middleware));
 });
 
-// ---------------------------------------
-
-// can be split into files too
 const Router = require('koa-router');
 
 const router = new Router();
@@ -43,21 +30,19 @@ router.get('/login/facebook', passport.authenticate('facebook', config.providers
 // connect with existing profile
 router.get('/connect/facebook', passport.authorize('facebook', config.providers.facebook.passportOptions));
 
-// http://stage.javascript.ru/auth/callback/facebook?error=access_denied&error_code=200&error_description=Permissions+error&error_reason=user_denied#_=_
 router.get('/oauth/facebook', passport.authenticate('facebook', {
   successRedirect: '/',
   failureRedirect: '/',
-  failureFlash: true // req.flash
+  failureFlash: true // 
 }));
 router.get('/login/git', passport.authenticate('github', config.providers.github.passportOptions));
-// connect with existing profile
+
 router.get('/connect/git', passport.authorize('github', config.providers.github.passportOptions));
 
-// http://stage.javascript.ru/auth/callback/facebook?error=access_denied&error_code=200&error_description=Permissions+error&error_reason=user_denied#_=_
 router.get('/oauth/git', passport.authenticate('github', {
   successRedirect: '/',
   failureRedirect: '/',
-  failureFlash: true // req.flash
+  failureFlash: true // 
 }));
 router.get('/signup', require('./routes/registration').get);
 router.post('/signup', require('./routes/registration').post);

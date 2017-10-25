@@ -7,9 +7,10 @@ module.exports = {
     siteHost: process.env.PORT || 'http://localhost:3000'
   },
   mongoose: {
-    uri:     process.env.MONGO_URI || 'mongodb://localhost/app',
+    uri:     process.env.MONGO_URI || 'mongodb://FLoppy:18sPLitm304@ds233895.mlab.com:33895/chat_app',
     keepAlive: 1,
-    poolSize: 5
+    poolSize: 5,
+    useMongoClient: true
   },
   redis: {
     url: process.env.REDIS_URL || 'pub-redis-12773.eu-central-1-1.1.ec2.redislabs.com',
