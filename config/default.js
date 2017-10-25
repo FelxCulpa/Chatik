@@ -12,8 +12,8 @@ module.exports = {
     poolSize: 5
   },
   redis: {
-    url: process.env.REDIS_URL,
-    port: process.env.REDIS_PORT
+    url: process.env.REDIS_URL || 'pub-redis-12773.eu-central-1-1.1.ec2.redislabs.com',
+    port: process.env.REDIS_PORT || '12773'
   },
   providers: {
     facebook: {
