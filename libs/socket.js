@@ -3,7 +3,7 @@ let config = require('config');
 let mongoose = require('mongoose');
 let co = require('co');
 let User = require('../models/user');
-
+let url = require('url');
 let socketIO = require('socket.io');
 
 let socketRedis = require('socket.io-redis');
