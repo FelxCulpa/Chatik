@@ -3,7 +3,7 @@ const User = require('../models/user');
 const pick = require('lodash/pick');
 const oid = require('../libs/oid');
 const sendMail = require('../libs/sendMail');
-const config = require('../config');
+const config = require('config');
 
 exports.get = async function(ctx, next) {
 	ctx.body = ctx.render('registration');
