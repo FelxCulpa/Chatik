@@ -17,14 +17,13 @@ block content
         .form-group
           .control-label.col-sm-20
             button.btn.btn-success.btn-lg(type="submit") Login
-        .form-group
-          .control-label.col-sm-10
-            .btn-group(role="group")
+      .btn-group(role="group")
               a(href="/login/facebook")
                 button.btn.btn-sm.btn-primary Login via Facebook
               a(href="/login/git")
                 button.btn.btn-sm.btn-warning Login via GitHub
 
+            
 block welcome
 
   p.lead #{lead}
