@@ -16,7 +16,10 @@ module.exports = async function(ctx, next) {
       return ctx.flash();
     },
 
-    lead: 'Please login and start talk'
+    lead: 'Please login and start talk',
+
+    host: process.env.HOST,
+    port: process.env.PORT
 
   };
 
