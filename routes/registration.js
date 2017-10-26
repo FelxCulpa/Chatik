@@ -34,7 +34,8 @@ exports.post = async function(ctx, next) {
 		subject:      'Verification',
 		to:           user.email,
 		name:         user.displayName,
-		token:        user.token
+		token:        user.token,
+		siteURL: config.serverHost + config.serverPort
 		});
 	ctx.body = "Please confirm your email address to finish your Registration";
 };

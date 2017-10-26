@@ -17,9 +17,6 @@ module.exports = async function(ctx, next) {
     },
 
     lead: 'Please login and start talk',
-
-    siteURL: config.serverHost + config.serverPort
-
   };
 
   context.locals.csrf = function() {

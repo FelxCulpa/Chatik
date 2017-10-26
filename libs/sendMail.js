@@ -15,7 +15,7 @@ const SesTransport = require('nodemailer-ses-transport');
 
 const SMTPTransport = require('nodemailer-smtp-transport');
 
-console.log(config.mailer.gmail.user, config.mailer.gmail.password);
+
 const transportEngine = (process.env.NODE_ENV == 'test' || process.env.MAILER_DISABLED) ? stubTransport() :
   config.mailer.transport == 'aws' ? new SesTransport({
     ses: new AWS.SES(),
