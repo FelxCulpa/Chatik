@@ -18,8 +18,8 @@ module.exports = async function(ctx, next) {
 
     lead: 'Please login and start talk',
 
-    host: process.env.HOST,
-    port: process.env.PORT
+    host: serverHost,
+    port: serverPort
 
   };
 

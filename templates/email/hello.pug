@@ -3,4 +3,4 @@ extends ./layout
 block content
   p Hello #{name}!
   span In order to confirm your registration click 
-      a(href=`http://${host}:${port}/verify/` + token) here
+      a(href='http://' + host + ":" + port + '/verify/' + token) here
