@@ -18,8 +18,7 @@ module.exports = async function(ctx, next) {
 
     lead: 'Please login and start talk',
 
-    host: config.serverHost,
-    port: config.serverPort
+    siteURL: config.serverHost + config.serverPort
 
   };
 
